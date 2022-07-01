@@ -1,4 +1,4 @@
-package com.app.movieapps.api.response
+package com.app.movieapps.data.remote.response
 
 import com.google.gson.annotations.SerializedName
 

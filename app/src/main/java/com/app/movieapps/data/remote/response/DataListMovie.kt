@@ -1,4 +1,4 @@
-package com.app.movieapps.api.response
+package com.app.movieapps.data.remote.response
 
 import com.google.gson.annotations.SerializedName
 
@@ -11,13 +11,13 @@ data class DataListMovie(
 	val totalPages: Int? = null,
 
 	@field:SerializedName("results")
-	val results: List<ResultsItem?>? = null,
+	val results: List<ListResultsItem?>? = null,
 
 	@field:SerializedName("total_results")
 	val totalResults: Int? = null
 )
 
-data class ResultsItem(
+data class ListResultsItem(
 
 	@field:SerializedName("overview")
 	val overview: String? = null,

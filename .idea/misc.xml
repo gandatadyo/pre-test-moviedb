@@ -3,6 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/LAPTOP/projects/example/pre-test-moviedb/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/LAPTOP/projects/example/pre-test-moviedb/app/src/main/res/layout/activity_main2.xml" value="0.22146739130434784" />
+        <entry key="..\:/LAPTOP/projects/example/pre-test-moviedb/app/src/main/res/layout/activity_movie_detail.xml" value="0.11980749746707194" />
+        <entry key="..\:/LAPTOP/projects/example/pre-test-moviedb/app/src/main/res/layout/adapter_list_movie.xml" value="0.10989583333333333" />
+        <entry key="..\:/LAPTOP/projects/example/pre-test-moviedb/app/src/main/res/layout/adapter_movie.xml" value="0.2" />
+        <entry key="..\:/LAPTOP/projects/example/pre-test-moviedb/app/src/main/res/layout/fragment_bookmark.xml" value="0.2359375" />
+        <entry key="..\:/LAPTOP/projects/example/pre-test-moviedb/app/src/main/res/layout/fragment_home.xml" value="0.22826086956521738" />
+        <entry key="..\:/LAPTOP/projects/example/pre-test-moviedb/app/src/main/res/menu/main_menu.xml" value="0.25" />
         <entry key="..\:/LAPTOP/projects/project_speedtest/MovieApps/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
       </map>
     </option>
