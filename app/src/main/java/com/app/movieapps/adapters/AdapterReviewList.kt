@@ -32,7 +32,7 @@ class AdapterReviewList(private val listData: ArrayList<DataReviewEntity?>) : Re
             binding.lblRating.text="Rating ${data.rating}/10"
             Glide
                 .with(itemView.context)
-                .load(data.avatar_path)
+                .load((data.avatar_path)!!.substring(1))
                 .centerCrop()
                 .placeholder(R.drawable.loading_spinner)
                 .into(binding.imgMovie);
