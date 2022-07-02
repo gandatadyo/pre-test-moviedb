@@ -1,5 +1,6 @@
 package com.app.movieapps.data.remote
 
+import com.app.movieapps.data.DataReviewEntity
 import com.app.movieapps.data.remote.response.*
 import retrofit2.Call
 import retrofit2.http.GET
@@ -8,32 +9,33 @@ import retrofit2.http.Query
 
 interface ApiService {
 
-    // genre movie
     @GET("3/genre/movie/list")
     fun getGenreMovieList(
         @Query("api_key") apiKey:String
     ): Call<ResponseGenre>
 
-    // movie list
     @GET("/3/discover/movie?language=en-US")
     fun getMovieList(
         @Query("api_key") apiKey:String,
-//        @Query("with_genres") idGenre:String
     ): Call<ResponseListMovie>
 
-    // movie detail
+    @GET("/3/discover/movie?language=en-US")
+    fun getMovieByGenreList(
+        @Query("api_key") apiKey:String,
+        @Query("with_genres") idGenre:String
+    ): Call<ResponseListMovie>
+
     @GET("/3/movie/{idMovie}?language=en-US")
     fun getMovieDetail(
         @Path("idMovie") idMovie:String,
         @Query("api_key") apiKey:String
-    ): Call<DataDetailMovie>
+    ): Call<ResponseDetailMovie>
 
-    // movie reviews
     @GET("/3/movie/{idMovie}/reviews?language=en-US&page=1")
     fun getReviews(
         @Path("idMovie") idMovie:String,
         @Query("api_key") apiKey:String
-    ): Call<DataReviewMovie>
+    ): Call<ResponseReviewMovie>
 
 
 //    @GET("detail_data/{id}")

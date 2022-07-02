@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.MovieDetail">
+    tools:context=".ui.MovieDetailActivity">
 
 
     <RelativeLayout
@@ -74,6 +74,11 @@
                 android:layout_marginRight="5dp"
                 android:layout_marginBottom="5dp"
                 android:text="TextView" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvReview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 

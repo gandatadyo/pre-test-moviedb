@@ -2,7 +2,7 @@ package com.app.movieapps.data.remote.response
 
 import com.google.gson.annotations.SerializedName
 
-data class DataDetailMovie(
+data class ResponseDetailMovie(
 
 	@field:SerializedName("original_language")
 	val originalLanguage: String? = null,

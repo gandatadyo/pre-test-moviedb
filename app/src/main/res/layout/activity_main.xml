@@ -6,26 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
 
-    <androidx.core.widget.NestedScrollView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fillViewport="true">
+        android:layout_height="match_parent">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical" >
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvGenre"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvData"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rvGenre"
+                android:layout_weight="1" />
+
+        </RelativeLayout>
+    </ScrollView>
 
 </RelativeLayout>
