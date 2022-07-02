@@ -7,37 +7,32 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface ApiService {
-    // example
-//    @GET("3/movie/550?api_key={apikey}")
-//    fun getExample(
-//        @Query("apikey") apiKey:String
-//    ): Call<ResponseExample>
 
     // genre movie
-    @GET("3/genre/movie/list?api_key={{apikey}}&language=en-US")
+    @GET("3/genre/movie/list")
     fun getGenreMovieList(
-        @Query("apikey") apiKey:String
-    ): Call<DataGenre>
+        @Query("api_key") apiKey:String
+    ): Call<ResponseGenre>
 
     // movie list
-    @GET("/3/discover/movie?api_key={{apikey}}&language=en-US&with_genres={idGenre}")
+    @GET("/3/discover/movie?language=en-US")
     fun getMovieList(
-        @Query("apikey") apiKey:String,
-        @Query("idGenre") idGenre:String
-    ): Call<DataListMovie>
+        @Query("api_key") apiKey:String,
+//        @Query("with_genres") idGenre:String
+    ): Call<ResponseListMovie>
 
     // movie detail
-    @GET("/3/movie/{idMovie}?api_key={{apikey}}&language=en-US")
+    @GET("/3/movie/{idMovie}?language=en-US")
     fun getMovieDetail(
         @Path("idMovie") idMovie:String,
-        @Query("apikey") apiKey:String
+        @Query("api_key") apiKey:String
     ): Call<DataDetailMovie>
 
     // movie reviews
-    @GET("/3/movie/{idMovie}/reviews?api_key={{apikey}}&language=en-US&page=1")
+    @GET("/3/movie/{idMovie}/reviews?language=en-US&page=1")
     fun getReviews(
         @Path("idMovie") idMovie:String,
-        @Query("apikey") apiKey:String
+        @Query("api_key") apiKey:String
     ): Call<DataReviewMovie>
 
 

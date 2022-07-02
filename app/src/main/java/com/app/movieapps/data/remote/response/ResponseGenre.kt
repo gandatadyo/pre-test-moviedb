@@ -2,7 +2,7 @@ package com.app.movieapps.data.remote.response
 
 import com.google.gson.annotations.SerializedName
 
-data class DataGenre(
+data class ResponseGenre(
 
 	@field:SerializedName("genres")
 	val genres: List<GenresItem?>? = null

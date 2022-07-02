@@ -1,11 +1,12 @@
 package com.app.movieapps.data.source.room
 
 import androidx.room.*
+import com.app.movieapps.data.source.entity.ItemMovieEntity
 
 @Dao
 interface MovieDao {
 
-//    // for movie data
+    // for movie data
 //    @Query("SELECT * FROM movieentities")
 //    fun getMovies(): DataSource.Factory<Int, ItemMovieEntity>
 //

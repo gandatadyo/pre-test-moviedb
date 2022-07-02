@@ -2,7 +2,7 @@ package com.app.movieapps.data.remote.response
 
 import com.google.gson.annotations.SerializedName
 
-data class DataListMovie(
+data class ResponseListMovie(
 
 	@field:SerializedName("page")
 	val page: Int? = null,

@@ -22,8 +22,5 @@ data class ItemMovieEntity(
     var description: String,
 
     @ColumnInfo(name = "imagePath")
-    var imagePath: String,
-
-    @ColumnInfo(name = "bookmarked")
-    var bookmarked: Boolean = false
+    var imagePath: String
 )
