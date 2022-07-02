@@ -12,9 +12,11 @@
         <entry key="..\:/LAPTOP/projects/example/pre-test-moviedb/app/src/main/res/layout/fragment_bookmark.xml" value="0.2359375" />
         <entry key="..\:/LAPTOP/projects/example/pre-test-moviedb/app/src/main/res/layout/fragment_home.xml" value="0.22826086956521738" />
         <entry key="..\:/LAPTOP/projects/example/pre-test-moviedb/app/src/main/res/menu/main_menu.xml" value="0.25" />
+        <entry key="..\:/LAPTOP/projects/pre-test-moviedb/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.2265" />
         <entry key="..\:/LAPTOP/projects/pre-test-moviedb/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/LAPTOP/projects/pre-test-moviedb/app/src/main/res/layout/activity_movie_detail.xml" value="0.25" />
+        <entry key="..\:/LAPTOP/projects/pre-test-moviedb/app/src/main/res/layout/activity_movie_detail.xml" value="0.4" />
         <entry key="..\:/LAPTOP/projects/pre-test-moviedb/app/src/main/res/layout/activity_movie_genre.xml" value="0.25" />
+        <entry key="..\:/LAPTOP/projects/pre-test-moviedb/app/src/main/res/layout/adapter_movie.xml" value="0.536" />
         <entry key="..\:/LAPTOP/projects/pre-test-moviedb/app/src/main/res/layout/adapter_review.xml" value="0.25" />
         <entry key="..\:/LAPTOP/projects/project_speedtest/MovieApps/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
       </map>

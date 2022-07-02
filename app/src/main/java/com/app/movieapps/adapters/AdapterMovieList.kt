@@ -23,23 +23,20 @@ class AdapterMovieList(val clickListener:(DataMovieEntity)->Unit) : ListAdapter<
     }
 
     inner class MovieViewHolder(private val binding: AdapterMovieBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: DataMovieEntity?) {
-            if (item != null) {
-                binding.lblTitle.text=item.original_title
-                binding.lblReleseDate.text=item.release_date
-                binding.lblOverview.text=item.overview
-                binding.itemClick.setOnClickListener {
-                    clickListener(item)
-                }
-
-                Glide
-                    .with(itemView.context)
-                    .load(itemView.context.getString(R.string.baseurl_img)+item.poster_path)
-                    .centerCrop()
-                    .placeholder(R.drawable.loading_spinner)
-                    .into(binding.imgMovie);
-
+        fun bind(item: DataMovieEntity) {
+            binding.lblTitle.text=item.original_title
+//            binding.lblReleseDate.text=item.release_date
+//            binding.lblOverview.text=item.overview
+            binding.itemClick.setOnClickListener {
+                clickListener(item)
             }
+
+            Glide
+                .with(itemView.context)
+                .load(itemView.context.getString(R.string.baseurl_img)+item.poster_path)
+                .centerCrop()
+                .placeholder(R.drawable.loading_spinner)
+                .into(binding.imgMovie);
         }
     }
 

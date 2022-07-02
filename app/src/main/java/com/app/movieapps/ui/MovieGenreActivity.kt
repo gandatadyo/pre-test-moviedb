@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.movieapps.adapters.AdapterMovieList
 import com.app.movieapps.data.DataGenreEntity
@@ -22,15 +23,19 @@ class MovieGenreActivity : AppCompatActivity() {
         this.supportActionBar?.hide()
 
         val adapterMovieByGenreList = AdapterMovieList { chooseDetailMovie(it) }
-        model.listMovie.observe(this) { movies -> adapterMovieByGenreList.submitList(movies) }
         with (binding.rvData){
             setHasFixedSize(true)
-            layoutManager = LinearLayoutManager(this@MovieGenreActivity,androidx.recyclerview.widget.LinearLayoutManager.HORIZONTAL,false)
+            layoutManager = GridLayoutManager(this@MovieGenreActivity, 3)
             adapter = adapterMovieByGenreList
+        }
+
+        model.listMovie.observe(this) { movies ->
+            adapterMovieByGenreList.submitList(movies)
         }
 
         val item = intent.getParcelableExtra<DataGenreEntity>("data")
         if(item!=null){
+            binding.lblToolbar.text = "Genre : "+item.name
             model.getDataMovieByGenre(this,item.id.toString())
         }
     }

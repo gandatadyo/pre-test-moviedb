@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.movieapps.adapters.AdapterGenreList
 import com.app.movieapps.adapters.AdapterMovieList
@@ -23,19 +24,20 @@ class MainActivity : AppCompatActivity() {
         this.supportActionBar?.hide()
 
         val adapterGenreList = AdapterGenreList { chooseMovieByGenre(it) }
-        model.listGenre.observe(this) { movies -> adapterGenreList.submitList(movies) }
-        with (binding.rvGenre){
-            setHasFixedSize(true)
-            layoutManager = LinearLayoutManager(this@MainActivity,LinearLayoutManager.HORIZONTAL,false)
-            adapter = adapterGenreList
-        }
+        binding.rvGenre.setHasFixedSize(true)
+        binding.rvGenre.layoutManager = LinearLayoutManager(this@MainActivity,LinearLayoutManager.HORIZONTAL,false)
+        binding.rvGenre.adapter = adapterGenreList
 
         val adapterMovieList = AdapterMovieList { chooseDetailMovie(it) }
-        model.listMovie.observe(this) { movies -> adapterMovieList.submitList(movies) }
-        with (binding.rvData){
-            setHasFixedSize(true)
-            layoutManager = LinearLayoutManager(this@MainActivity)
-            adapter = adapterMovieList
+        binding.rvData.setHasFixedSize(true)
+        binding.rvData.layoutManager = GridLayoutManager(this@MainActivity, 3)
+        binding.rvData.adapter = adapterMovieList
+
+        model.listGenre.observe(this) { genre ->
+            adapterGenreList.submitList(genre)
+        }
+        model.listMovie.observe(this) { movies ->
+            adapterMovieList.submitList(movies)
         }
 
         model.getDataGenre(this)

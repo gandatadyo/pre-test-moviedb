@@ -25,17 +25,24 @@ interface ApiService {
         @Query("with_genres") idGenre:String
     ): Call<ResponseListMovie>
 
-    @GET("/3/movie/{idMovie}?language=en-US")
+    @GET("/3/movie/{movie_id}?language=en-US")
     fun getMovieDetail(
-        @Path("idMovie") idMovie:String,
+        @Path("movie_id") idMovie:String,
         @Query("api_key") apiKey:String
     ): Call<ResponseDetailMovie>
 
-    @GET("/3/movie/{idMovie}/reviews?language=en-US&page=1")
+    @GET("/3/movie/{movie_id}/reviews?language=en-US&page=1")
     fun getReviews(
-        @Path("idMovie") idMovie:String,
+        @Path("movie_id") idMovie:String,
         @Query("api_key") apiKey:String
     ): Call<ResponseReviewMovie>
+
+    @GET("/movie/{movie_id}/videos")
+    fun getVideosUrl(
+        @Path("movie_id") idMovie:String,
+        @Query("api_key") apiKey:String
+    ): Call<ResponseVideos>
+
 
 
 //    @GET("detail_data/{id}")
