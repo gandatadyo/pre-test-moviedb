@@ -7,10 +7,8 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 class DataReviewEntity(
-    val id: String? = null,
-    val updatedAt: String? = null,
-    val author: String? = null,
-    val createdAt: String? = null,
-    val content: String? = null,
-    val url: String? = null
+    val name: String? = null,
+    val username: String? = null,
+    val avatar_path: String? = null,
+    val rating: String? = null,
 ) : Parcelable

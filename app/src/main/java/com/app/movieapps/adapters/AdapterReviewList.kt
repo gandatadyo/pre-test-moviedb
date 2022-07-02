@@ -2,48 +2,40 @@ package com.app.movieapps.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.app.movieapps.R
 import com.app.movieapps.data.DataReviewEntity
 import com.app.movieapps.databinding.AdapterReviewBinding
+import com.bumptech.glide.Glide
 
-class AdapterReviewList : ListAdapter<DataReviewEntity, AdapterReviewList.MovieViewHolder>(WordsComparator()) {
+class AdapterReviewList(private val listData: ArrayList<DataReviewEntity?>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    private val viewTypeItem = 0
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
-        val view = AdapterReviewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return MovieViewHolder(view)
+    override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        val itemAdapter = AdapterReviewBinding.inflate(LayoutInflater.from(viewGroup.context), viewGroup, false)
+        return CardViewHolder(itemAdapter)
     }
 
-    override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
-        val current = getItem(position)
-        holder.bind(current)
-    }
+    override fun getItemCount(): Int = listData.size
 
-    inner class MovieViewHolder(private val binding: AdapterReviewBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: DataReviewEntity?) {
-            if (item != null) {
-                binding.lblTitle.text=item.author
-                binding.lblDescription.text=item.content
-
-//                Glide
-//                    .with(itemView.context)
-//                    .load(itemView.context.getString(R.string.baseurl_img)+item.poster_path)
-//                    .centerCrop()
-//                    .placeholder(R.drawable.loading_spinner)
-//                    .into(binding.imgMovie);
-
-            }
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        if (holder.itemViewType == viewTypeItem) {
+            val holderTemp :CardViewHolder = holder as CardViewHolder
+            listData[position]?.let { holderTemp.bind(it) }
         }
     }
 
-    class WordsComparator : DiffUtil.ItemCallback<DataReviewEntity>() {
-        override fun areItemsTheSame(oldItem: DataReviewEntity, newItem: DataReviewEntity): Boolean {
-            return oldItem === newItem
-        }
-
-        override fun areContentsTheSame(oldItem: DataReviewEntity, newItem: DataReviewEntity): Boolean {
-            return oldItem.id == newItem.id
+    inner class CardViewHolder(private val binding: AdapterReviewBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(data: DataReviewEntity) {
+            binding.lblTitle.text=data.username
+            binding.lblDescription.text=data.name
+            binding.lblRating.text="Rating ${data.rating}/10"
+            Glide
+                .with(itemView.context)
+                .load(data.avatar_path)
+                .centerCrop()
+                .placeholder(R.drawable.loading_spinner)
+                .into(binding.imgMovie);
         }
     }
 }

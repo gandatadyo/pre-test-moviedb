@@ -21,13 +21,12 @@ class MovieGenreActivity : AppCompatActivity() {
         binding = ActivityMovieGenreBinding.inflate(layoutInflater)
         setContentView(binding.root)
         this.supportActionBar?.hide()
+        binding.imgBack.setOnClickListener { finish() }
 
         val adapterMovieByGenreList = AdapterMovieList { chooseDetailMovie(it) }
-        with (binding.rvData){
-            setHasFixedSize(true)
-            layoutManager = GridLayoutManager(this@MovieGenreActivity, 3)
-            adapter = adapterMovieByGenreList
-        }
+        binding.rvData.setHasFixedSize(true)
+        binding.rvData.layoutManager = GridLayoutManager(this@MovieGenreActivity, 3)
+        binding.rvData.adapter = adapterMovieByGenreList
 
         model.listMovie.observe(this) { movies ->
             adapterMovieByGenreList.submitList(movies)

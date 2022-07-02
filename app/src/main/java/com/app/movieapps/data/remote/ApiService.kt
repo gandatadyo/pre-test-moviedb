@@ -37,7 +37,7 @@ interface ApiService {
         @Query("api_key") apiKey:String
     ): Call<ResponseReviewMovie>
 
-    @GET("/movie/{movie_id}/videos")
+    @GET("/3/movie/{movie_id}/videos")
     fun getVideosUrl(
         @Path("movie_id") idMovie:String,
         @Query("api_key") apiKey:String

@@ -37,7 +37,6 @@ class ViewModelMain:ViewModel() {
                         }
                         listGenre.value = listTemp
                     }
-                    Toast.makeText(ctx,"finish",Toast.LENGTH_LONG).show()
                 } else {
                     Toast.makeText(ctx,"onFailure: ${response.message()}",Toast.LENGTH_LONG).show()
                 }

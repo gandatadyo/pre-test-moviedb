@@ -13,4 +13,5 @@
     <color name="primaryDark">#0C1F7C</color>
     <color name="secondary">#08CE57</color>
     <color name="secondaryDark">#05933D</color>
+    <color name="yellow">#FFEB3B</color>
 </resources>
